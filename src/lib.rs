@@ -94,6 +94,7 @@ pub enum BaseColor {
     Magenta,
     Cyan,
     White,
+	None,
 }
 
 #[no_mangle]
@@ -319,6 +320,7 @@ impl From<Color> for crossterm::style::Color {
                     BaseColor::Magenta => crossterm::style::Color::DarkMagenta,
                     BaseColor::Cyan => crossterm::style::Color::DarkCyan,
                     BaseColor::White => crossterm::style::Color::Grey,
+					BaseColor::None => crossterm::style::Color::Reset,
                 }
             },
             ColorTag::Bright => {
@@ -332,6 +334,7 @@ impl From<Color> for crossterm::style::Color {
                     BaseColor::Magenta => crossterm::style::Color::Magenta,
                     BaseColor::Cyan => crossterm::style::Color::Cyan,
                     BaseColor::White => crossterm::style::Color::White,
+					BaseColor::None => crossterm::style::Color::Reset,
                 }
             },
             ColorTag::Ansi => {

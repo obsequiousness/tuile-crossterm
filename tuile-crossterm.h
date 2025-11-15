@@ -12,6 +12,7 @@ enum BaseColor {
   Magenta,
   Cyan,
   White,
+  None,
 };
 typedef uint8_t BaseColor;
 
